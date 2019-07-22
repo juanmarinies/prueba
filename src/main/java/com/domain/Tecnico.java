@@ -5,26 +5,25 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "jugador")
+@Table(name = "tecnico")
 @EntityListeners(AuditingEntityListener.class)
-public class Jugador {
+public class Tecnico {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name="jugador_id")
+  @Column(name="tecnico_id")
   private Long id;
   
   @NotBlank
-  @Column(name="jugador_name")
-  private String jugadorName;
+  @Column(name="tecnico_name")
+  private String tecnicoName;
   
-  
-  public Jugador() {
+  public Tecnico() {
   }
 
   
-  public Jugador(@NotBlank String jugadorName) {
-    this.jugadorName = jugadorName;
+  public Tecnico(@NotBlank String tecnicoName) {
+    this.tecnicoName = tecnicoName;
   }
 
 
@@ -33,21 +32,19 @@ public class Jugador {
   }
 
 
-  public Jugador setId(Long id) {
+  public Tecnico setId(Long id) {
     this.id = id;
     return this;
   }
 
 
-  public String getJugadorName() {
-    return jugadorName;
+  public String getTecnicoName() {
+    return tecnicoName;
   }
 
 
-  public Jugador setJugadorName(String jugadorName) {
-    this.jugadorName = jugadorName;
+  public Tecnico setTecnicoName(String tecnicoName) {
+    this.tecnicoName = tecnicoName;
     return this;
   }
-  
-  
 }
