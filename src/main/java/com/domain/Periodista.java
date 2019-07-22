@@ -1,6 +1,5 @@
 package com.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -34,11 +33,8 @@ public class Periodista {
 
   
 
-  public Periodista(@NotBlank Periodista periodistaName, Conferencia conferencia, List<Canal> canalName, List<Pregunta> pregunta) {
+  public Periodista(@NotBlank Periodista periodistaName) {
     this.periodistaName = periodistaName;
-    this.conferencia = conferencia;
-    this.canalName = canalName;
-    this.pregunta = pregunta;
   }
 
 
