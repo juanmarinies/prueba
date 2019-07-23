@@ -12,5 +12,7 @@ public interface EquipoService {
   Equipo findById(Long id);
 
   void delete(Equipo equipo);
+  
+  public long count();
 
 }

@@ -41,4 +41,10 @@ public class EquipoServiceImpl implements EquipoService {
     equipoRepository.delete(equipo);
   }
 
+  @Override
+  public long count() {
+    // TODO Auto-generated method stub
+    return equipoRepository.count();
+  }
+  
 }
