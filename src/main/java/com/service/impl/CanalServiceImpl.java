@@ -1,10 +1,14 @@
 package com.service.impl;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.domain.Canal;
 import com.repository.CanalRepository;
 import com.service.CanalService;
 
+@Service
+@Transactional
 public class CanalServiceImpl implements CanalService {
   
   private final CanalRepository canalRepository;

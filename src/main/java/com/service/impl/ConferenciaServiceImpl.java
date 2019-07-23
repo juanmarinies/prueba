@@ -1,10 +1,14 @@
 package com.service.impl;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.domain.Conferencia;
 import com.repository.ConferenciaRepository;
 import com.service.ConferenciaService;
 
+@Service
+@Transactional
 public class ConferenciaServiceImpl implements ConferenciaService {
 
   private final ConferenciaRepository conferenciaRepository;
@@ -34,7 +38,7 @@ public class ConferenciaServiceImpl implements ConferenciaService {
   @Override
   public void delete(Conferencia conferencia) {
     // TODO Auto-generated method stub
-    
+    conferenciaRepository.delete(conferencia);
   }
 
 }

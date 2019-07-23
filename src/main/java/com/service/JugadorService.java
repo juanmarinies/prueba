@@ -11,6 +11,6 @@ public interface JugadorService {
 
   Jugador findById(Long id);
 
-  void delete(Jugador directivo);
+  void delete(Jugador jugador);
 
 }

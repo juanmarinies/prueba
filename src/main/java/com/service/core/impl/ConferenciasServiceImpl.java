@@ -5,6 +5,6 @@ import com.domain.core.impl.ConferenciaDomainService;
 import com.service.core.DomainConferenciaService;
 
 @Service
-public class ConferenciaServiceImpl  extends ConferenciaDomainService implements DomainConferenciaService{
+public class ConferenciasServiceImpl  extends ConferenciaDomainService implements DomainConferenciaService{
 
 }

@@ -1,10 +1,14 @@
 package com.service.impl;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.domain.Directivo;
 import com.repository.DirectivoRepository;
 import com.service.DirectivoService;
 
+@Service
+@Transactional
 public class DirectivoServiceImpl implements DirectivoService {
   
   private final DirectivoRepository directivoRepository;
@@ -14,9 +18,9 @@ public class DirectivoServiceImpl implements DirectivoService {
   }
 
   @Override
-  public Directivo save(Directivo canal) {
+  public Directivo save(Directivo directivo) {
     // TODO Auto-generated method stub
-    return directivoRepository.save(canal);
+    return directivoRepository.save(directivo);
   }
 
   @Override

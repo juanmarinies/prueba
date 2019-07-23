@@ -20,25 +20,25 @@ public class JugadorServiceImpl implements JugadorService {
   @Override
   public Jugador save(Jugador jugador) {
     // TODO Auto-generated method stub
-    return null;
+    return jugadorRepository.save(jugador);
   }
 
   @Override
   public List<Jugador> findAll() {
     // TODO Auto-generated method stub
-    return null;
+    return jugadorRepository.findAll();
   }
 
   @Override
   public Jugador findById(Long id) {
     // TODO Auto-generated method stub
-    return null;
+    return jugadorRepository.getOne(id);
   }
 
   @Override
-  public void delete(Jugador directivo) {
+  public void delete(Jugador jugador) {
     // TODO Auto-generated method stub
-    
+    jugadorRepository.delete(jugador);
   }
 
 }

@@ -5,7 +5,7 @@ import com.domain.Directivo;
 
 public interface DirectivoService {
   
-  Directivo save(Directivo canal);
+  Directivo save(Directivo directivo);
   
   List<Directivo> findAll();
 

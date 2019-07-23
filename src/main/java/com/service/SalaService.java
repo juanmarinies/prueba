@@ -5,7 +5,7 @@ import com.domain.Sala;
 
 public interface SalaService {
   
-  Sala save(Sala pregunta);
+  Sala save(Sala sala);
   
   List<Sala> findAll();
 
