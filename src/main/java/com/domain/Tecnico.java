@@ -18,6 +18,8 @@ public class Tecnico {
   @Column(name="tecnico_name")
   private String tecnicoName;
   
+  private Equipo equipo;
+  
   public Tecnico() {
   }
 
@@ -45,6 +47,17 @@ public class Tecnico {
 
   public Tecnico setTecnicoName(String tecnicoName) {
     this.tecnicoName = tecnicoName;
+    return this;
+  }
+
+
+  public Equipo getEquipo() {
+    return equipo;
+  }
+
+
+  public Tecnico setEquipo(Equipo equipo) {
+    this.equipo = equipo;
     return this;
   }
 }

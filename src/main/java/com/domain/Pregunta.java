@@ -15,8 +15,12 @@ public class Pregunta {
   private Long id;
   
   @NotBlank
-  @Column(name="preguntas")
+  @Column(name="pregunta")
   private String preguntas;
+  
+  @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+  @JoinColumn(name= "periodista_id")
+  private Periodista periodista;
     
   
   public Pregunta() {
@@ -35,12 +39,22 @@ public class Pregunta {
     return this;
   }
 
-  public String getPregunta() {
+  public String getPreguntas() {
     return preguntas;
   }
 
-  public Pregunta setPregunta(String pregunta) {
+  public Pregunta setPreguntas(String pregunta) {
     this.preguntas = pregunta;
     return this;
   }
+
+  public Periodista getPeriodista() {
+    return periodista;
+  }
+
+  public Pregunta setPeriodista(Periodista periodista) {
+    this.periodista = periodista;
+    return this;
+  }
+  
 }

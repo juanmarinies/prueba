@@ -18,30 +18,32 @@ public class Equipo {
   
   @NotBlank
   @Column(name="equipo_name")
-  private Equipo equipoName;
+  private String equipoName;
   
   @OneToMany(mappedBy = "equipoName")
   private List<Conferencia> conferencias= new ArrayList<>();
   
-  @OneToOne
-  @JoinColumn(name = "tecnico_id")
-  private List<Tecnico> etecnicoName;
+  @OneToOne(cascade=CascadeType.ALL)
+  @JoinColumn(name ="tecnico_id")
+  private Tecnico tecnico;
   
-  @OneToOne
+  @OneToOne(cascade=CascadeType.ALL)
   @JoinColumn(name = "directivo_id")
-  private List <Directivo> directivoName;
+  private Directivo directivo;
   
-  
-  private List<Jugador> jugadorName;
+  @ManyToMany(cascade = { CascadeType.ALL })
+  @JoinTable(
+      name = "Jugador_Equipo", 
+      joinColumns = { @JoinColumn(name = "jugador_id") }, 
+      inverseJoinColumns = { @JoinColumn(name = "equipo_id") }
+  )
+  private List<Jugador> jugadores;
   
   public Equipo() {
   }
 
-  public Equipo(@NotBlank Equipo equipoName, List<Tecnico> etecnicoName, List<Directivo> directivoName, List<Jugador> jugadorName) {
+  public Equipo(@NotBlank String equipoName) {
     this.equipoName = equipoName;
-    this.etecnicoName = etecnicoName;
-    this.directivoName = directivoName;
-    this.jugadorName = jugadorName;
   }
 
   public Long getId() {
@@ -53,40 +55,49 @@ public class Equipo {
     return this;
   }
 
-  public Equipo getEquipoName() {
+  public String getEquipoName() {
     return equipoName;
   }
 
-  public Equipo setEquipoName(Equipo equipoName) {
+  public Equipo setEquipoName(String equipoName) {
     this.equipoName = equipoName;
     return this;
   }
 
-  public List<Tecnico> getEtecnicoName() {
-    return etecnicoName;
+  public Tecnico getTecnico() {
+    return tecnico;
   }
 
-  public Equipo setEtecnicoName(List<Tecnico> etecnicoName) {
-    this.etecnicoName = etecnicoName;
+  public Equipo setTecnico(Tecnico tecnico) {
+    this.tecnico = tecnico;
     return this;
   }
 
-  public List<Directivo> getDirectivoName() {
-    return directivoName;
+  public Directivo getDirectivo() {
+    return directivo;
   }
 
-  public Equipo setDirectivoName(List<Directivo> directivoName) {
-    this.directivoName = directivoName;
+  public Equipo setDirectivo(Directivo directivo) {
+    this.directivo = directivo;
     return this;
   }
 
-  public List<Jugador> getJugadorName() {
-    return jugadorName;
+  public List<Jugador> getJugadores() {
+    return jugadores;
   }
 
-  public Equipo setJugadorName(List<Jugador> jugadorName) {
-    this.jugadorName = jugadorName;
+  public Equipo setJugadores(List<Jugador> jugadores) {
+    this.jugadores = jugadores;
     return this;
   }
-  
+
+  public List<Conferencia> getConferencias() {
+    return conferencias;
+  }
+
+  public Equipo setConferencias(List<Conferencia> conferencias) {
+    this.conferencias = conferencias;
+    return this;
+  }
+ 
 }

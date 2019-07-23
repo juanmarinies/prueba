@@ -1,5 +1,6 @@
 package com.domain;
 
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -18,6 +19,8 @@ public class Jugador {
   @Column(name="jugador_name")
   private String jugadorName;
   
+  @ManyToMany(mappedBy = "jugadores")
+  private List<Equipo> equipos;
   
   public Jugador() {
   }

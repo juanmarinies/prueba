@@ -17,7 +17,7 @@ public class Periodista {
   
   @NotBlank
   @Column(name="periodista_name")
-  private Periodista periodistaName;
+  private String periodistaName;
   
   @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
   @JoinColumn(name= "conferencia_id")
@@ -26,6 +26,7 @@ public class Periodista {
   @OneToMany(mappedBy = "periodista")
   private List<Canal> canalName;
   
+  @OneToMany(mappedBy = "periodista")
   private List<Pregunta> pregunta;
   
   public Periodista() {
@@ -33,7 +34,7 @@ public class Periodista {
 
   
 
-  public Periodista(@NotBlank Periodista periodistaName) {
+  public Periodista(@NotBlank String periodistaName) {
     this.periodistaName = periodistaName;
   }
 
@@ -48,11 +49,11 @@ public class Periodista {
     return this;
   }
 
-  public Periodista getPeriodistaName() {
+  public String getPeriodistaName() {
     return periodistaName;
   }
 
-  public Periodista setPeriodistaName(Periodista periodistaName) {
+  public Periodista setPeriodistaName(String periodistaName) {
     this.periodistaName = periodistaName;
     return this;
   }

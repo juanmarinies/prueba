@@ -18,6 +18,8 @@ public class Directivo {
   @Column(name="directivo_name")
   private String directivoName;
   
+  private Equipo equipo;
+  
   public Directivo() {
   }
 
@@ -42,5 +44,16 @@ public class Directivo {
     this.directivoName = directivoName;
     return this;
   }
+
+  public Equipo getEquipo() {
+    return equipo;
+  }
+
+  public Directivo setEquipo(Equipo equipo) {
+    this.equipo = equipo;
+    return this;
+  }
+  
+  
   
 }
