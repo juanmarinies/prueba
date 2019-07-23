@@ -18,6 +18,7 @@ public class Directivo {
   @Column(name="directivo_name")
   private String directivoName;
   
+  @OneToOne(mappedBy="directivo")
   private Equipo equipo;
   
   public Directivo() {

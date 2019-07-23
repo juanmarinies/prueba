@@ -9,7 +9,7 @@ public interface CanalService {
   
   List<Canal> findAll();
 
-  Canal findById(Long canalId);
+  Canal findById(Long id);
 
   void delete(Canal canal);
 

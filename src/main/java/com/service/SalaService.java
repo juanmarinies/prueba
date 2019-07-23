@@ -1,5 +1,16 @@
 package com.service;
 
-public interface SalaService {
+import java.util.List;
+import com.domain.Sala;
 
+public interface SalaService {
+  
+  Sala save(Sala pregunta);
+  
+  List<Sala> findAll();
+
+  Sala findById(Long id);
+
+  void delete(Sala sala);
+  
 }

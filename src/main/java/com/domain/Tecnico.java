@@ -18,6 +18,7 @@ public class Tecnico {
   @Column(name="tecnico_name")
   private String tecnicoName;
   
+  @OneToOne(mappedBy="tecnico")
   private Equipo equipo;
   
   public Tecnico() {
