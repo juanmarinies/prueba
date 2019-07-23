@@ -38,12 +38,8 @@ public class Conferencia {
   }
 
 
-
   public Conferencia(@NotBlank String conferenciaName, Sala salaName, Equipo equipoName, List<Periodista> periodistas) {
     this.conferenciaName = conferenciaName;
-    this.salaName = salaName;
-    this.equipoName = equipoName;
-    this.periodistas = periodistas;
   }
 
 
