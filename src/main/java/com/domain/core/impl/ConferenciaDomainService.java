@@ -9,7 +9,7 @@ import com.domain.core.IConferenciaDomainService;
 public abstract class ConferenciaDomainService implements IConferenciaDomainService {
 
   @Override
-  public void validamaximoconferencias() {
+  public void validamaximoequipos() {
     // TODO Auto-generated method stub
     ArrayList<Equipo> equipos = new ArrayList<>(); 
     
